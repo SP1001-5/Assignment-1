@@ -1,0 +1,33 @@
+Day 1:
+Output methods
+Type conversion
+Parse 
+TryParse
+Boxing/Unboxing
+Nullable Concept / Null coalescing
+methods and parameters
+var and dynamic
+Loops / If
+Arrays
+
+
+Day 2:
+Strings / String Builder
+static vs instance
+structures
+Readonly
+constants
+Constructors
+class and objects
+OOP
+	polymorphism
+	encapsulation
+	abstraction
+	inheritance
+constructor chaining
+destructor
+garbage collector
+
+Day 3:
+Types of Constructors
+Access Specifiers

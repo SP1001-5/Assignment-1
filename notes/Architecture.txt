@@ -1,0 +1,58 @@
+Layer 1
+C++, C#, VB, F#, Delphi, Jscript, etc.,
+Layer 2
+Winforms|WPF|Silverlight|ASP.net|Mobile
+Layer 3
+WCF and WWF (Communication and Workflow Tier)
+Layer 4
+ADO.net,UNO,XML,(Data Tier)
+Layer 5
+Base Class Library - BCL (Framework Class Library) - FCL
+Layer 6
+Common Language Runtime - CLR
+Layer 7
+Operating System
+
+CLR: Architecture -> maps the difference
+
+Layer ! (Language Independence)
+Common Type System (Common Lamguage Specification)
+	Numeric and numbers are considered as Integer
+Layer 2
+il to Native code (JIT Compiler)
+Execution Support
+Security
+Layer 3 
+Garbage Collector, Code management
+Layer 4
+Class Loader, Memory Layout
+
+.Net Framework is a software Component that runs on the windows operating system
+	- It provides tools and libraries to enable developers to create software
+ much faster and easier
+
+CLR acts as an interface between the application and the OS 
+	-Loads and execute the code
+	-Converts IL to native code
+	-Separates the process and memory
+	-manages memory and objects
+	-enforces code and access security
+	-Provides type - checking
+	-Provide code meta data
+	-provide profiling, debugging etc.,
+beyond CLR is unmanaged code
+
+- IL/MSIL/CIL/Managed code (compilation of source code)
+-Assemblies are the compiled projects that are either an .exe or .dll(only 2 types) depending on the type of application
+-source code Compilation leads to IL (Assembly)
+ Execution on JIT - Leads to native code
+- Native code is not stored permanently
+Native code is generated again
+
+Assembles : are the fundamental unit of deployment , version control, reuse and security enabled .net application
+- They contain Portable Executable (PE) header, CLR header ,IL and Manifest
+- Manifest files contain meta data
+- Assembles can be either private or shared
+- Shared assembles are placed in GAC (Global Assembly Cache)
+- We use ILDASM to peek into an assembly file
+- use ILASM to reconstruct an assembly

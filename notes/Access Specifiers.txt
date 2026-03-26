@@ -1,0 +1,14 @@
+Access Specifiers : 
+	->defines the scope and visibility of a class member, C# supports the following
+
+  1.Public
+	->All classes within the assembly (day 3) or outside the assembly(day 1 or day 2) can access the  public members
+	->WE just need an object to access it
+
+  2.Private
+
+  3.Protected
+
+  4.Internal
+
+  5.Internal Protected / protected internal

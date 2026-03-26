@@ -1,0 +1,60 @@
+Strings
+->collection of characters
+->sealed class
+->allocated in heap memory
+->immutable
+->string memory cannot be changed dynamically
+
+string s1 ="hello"
+s1 -> stores address of the value "Hello" in string pool
+
+s1 = "hello world"
+s1 -> stores the address of hello world and that hello will not be deleted
+
+string s2 = "hello"
+s2-> s2 will now point the address of the hello which is frst created by s1
+
+string str = new string(char[] ch);
+str-> will point the new memory address other than storing the value in pool
+
+String Builder:
+	same as strings but mutable
+	the address will not be modified rather the value will be modified in the same address
+
+static vs Instance:
+
+internal class StringEg{
+	int mydata;  //non static member or field or instance member
+	static int ourdata = 15; //static member of field
+	float fdata;
+
+	public static void main(){
+		string str;
+		str = "Iam a String";
+		WriteLine("str for the first time is : {0}", str.GetHashCode());
+		
+		string str2 = "Iam a String";
+		WriteLine("str for the first time is : {0}", str2.GetHashCode());
+
+		char[] carr = new char[] {'h','e','l','o'};
+		string str4 = new string(carr);
+		WriteLine(str4.GetHashCode());
+		str3 = str4;
+		writeline(str3.GetHashCode);
+
+		StringBuilder sb = new StringBuilder("Hello ");
+		WriteLine("sb for the first time is : {0}", sb.GetHashCode());
+		sb.append("World");
+		WriteLine("sb for the first time is : {0}", sb.GetHashCode());
+		instancevsstatic();
+	}
+
+	public static void instancevsstatic(){
+		StringEg seg = new StringEg();
+		seg mydata = 100;
+		seg.fdata = 125.45f
+		writeLine($"Mydata is {seg.mydata},floatData is {seg.fdata}, Our data is {ourdata}'); 
+		ourdata = 25; //value is changed on printing 
+		
+	}
+}

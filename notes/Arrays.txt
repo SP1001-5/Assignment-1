@@ -1,0 +1,62 @@
+Arrays:
+	Collection of values of the same data type
+	->Single dimension
+	->two dimension/ multi dimension
+	->Jagged Array
+System.Array class : functions like sort(), reverse() & prop like rank, length
+
+Single dimension:
+
+Datatype []Arrayname = new Datatype[soze]
+int []a = new int[5]\
+int []a = new int[5]{1,2,3,4,5}
+int []a = new int[]={1,2,3,4,5}
+
+2 Dimension:
+
+arr.GetLength(0) -> row
+arr.GetLength(1) -> column
+
+class Arrays
+	public void SingleD
+		int[] arr = new int[5] {3,8,6,9,5)
+		CWL("Length", arr.Length);
+		Array.Sort(arr);
+		arr.Rank //dimension
+	public void TwoD()
+		int[,] myarray = new int[2,3] {{1,2,3},{4,5,6}}
+		
+
+jagged array:
+	often called as array of arrays
+	an element of a jagged array itself is an array
+int[][] array1 = new int[3][];
+array1[0] new int[]{1,2,3,4};
+array1[1] = new int[]{5,6};
+array1[2] = new int[]{7,8,9};
+
+	public void JaggedArray()
+		int[][]myjagg = new int[2][];
+		myjagg[0] = new int[3]
+		myjagg[1] = new int[2];
+		//values
+		myjagg[0][0] = 2;
+		myjagg[0][1] = 4;
+		myjagg[0][2] = 6;
+
+		myjagg[1][0] = 1;
+		myjagg[1][1] = 3;
+
+		//another way
+		int[][] jagg2 = {
+			new int[]{5,10,15,20},
+			new int[]{25,30,35},
+			new int[]{40,45}
+		};
+
+		//to display
+		for(int i=0;i<jagg2.Length;i++){
+			for(int j=0; j<jagg2[i].Length;j++
+				write(jagg2[i][j]
+		}	
+		WriteLine();

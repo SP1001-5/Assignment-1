@@ -1,0 +1,98 @@
+Methods and parameters:
+
+types:
+	1.Value
+	2.Reference (ref)
+	3.out (out)
+	4.parameter array (params)
+
+->call by value will not affect the value passed as an arugument
+->call by reference is pointed to the address of the value which is passed
+->CBR will affect the value passed as an argument
+->OUT method is used to return many outputs from the function other than return function
+-> params keyword helps in giving a variable number of arguments separated by commas or zero arguments
+->only one params is allowed
+->param keword should be the last argument in function declaration
+
+namespace Day1{
+
+	internal class Program{
+		public static void Main(string[] arge){
+			int i =10;
+			Simplecallbyvalue(i);
+			Writeline("Value is {0}",i);
+			simplecallbyref(ref i);
+			Writeline("Value is {0}",i);
+			int total, prod, diff = 0;
+			diff = Calculator(20,40,out total, out product);						WriteLine("{0},{1}",total,product);
+			int totalele = Addele(); //calling a funvtion with no arguments
+			writeline(totalele);
+			totalele = Addele(432,123,834,545) //calling a function with 4 arguments
+			writeLine(totalele);
+			Implicittype implicit = new Implicittype;
+			implicit.understand();
+			Console.ReadKey();
+		}
+		public static void Simplecallbyvalue(int j){
+			j=100;
+		}
+		public static void simplecallbyref(ref int j){
+			j=100;
+		}
+
+//out parametres
+		public static int Calculator(int a, int b, out int sum, out int product){
+			sum = a+b;
+			product = a*b;
+			return a-b;
+		}
+
+		public static int Addele(params int[] elements){
+			int sum = 0;
+			foreach(int element in elements){	
+				sum+=element;
+			}
+			return sum;
+		}
+}
+}
+
+implicit types:
+	1. var
+	2.dynamic
+
+-> var can implicitly convert the data type
+-> initialization should be done while declaring var
+-> initialy var is of no data type
+-> with the value given it chooses the data type 
+->data type cannot be changed after initializing
+
+->dynamic will be converted in the run time
+->time complexity is worst
+->value can be initialized at any time
+
+Anonymous Type:
+
+->collection of information
+->Arrays with multiple data types
+
+internal class Implicittypes{
+	public void Understand(){
+		int x;
+		x = 5;
+		var v = 'x';
+		dynamic d ;
+		d=5;
+		d='a';
+		d=34.54f;
+
+		//Anonymous type - combination of information
+		var mytype = new {
+			data1 = "Csharp",
+			data2 = 10,
+			data3 = true
+			};
+		WriteLine(mytype.data1);
+		writeLine(mytype.GetType()
+	}
+}

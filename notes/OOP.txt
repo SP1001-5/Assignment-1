@@ -1,0 +1,63 @@
+OOP : way of designing applications
+	1.Encapsulation
+		->Unit of information that consists of fields and functions
+		->Is a process of enclosing one or more item within a physical or a logical package
+		->It prevents access to implementation details using access specifiers
+	2.Abstraction 
+		->giving away only required data and hiding the rest
+	3.Inheritance
+		->Extension
+	4.Polymorphism
+		->Exist in many forms
+ 
+	
+````````````````````````````````````````````````
+Program:
+
+namespace Day3{
+	class Employee{
+		int empid ;
+		string Empname ;
+		float empsalary ;
+
+		public EMployee(){ //empty constructor
+			empid = 1;
+			Empname = "Ajay";
+			empsalary = 450000;
+			
+		}
+
+		internal Employee(int e, string s) //parameterized Constructor
+		{
+			empid = e;
+			Empname = s;
+		}
+
+		internal EMployee(int empid, string Empname, float empsalary){
+			this.empid = empid;
+			this.Empname = Empname;
+			this.empsalary =empsalary;
+		}
+
+		public void SHowemp(){
+			Write($"Empid:{empid} , {empname}, {empsalary});
+		}
+		
+		~Employee(){ //Destructors
+			WriteLine("bye from employee");
+			Console.Read();
+		}
+	}
+	class Program{
+		static void Main(string[] args){
+			Employee emp = new Employee();
+			emp.Showemp();
+			Employee emp2 = new Employee(2,"Kaniga");
+			emp= null;
+			GC.Collect(); //garbage Collector
+			emp2.Showemp();
+			conosole.Read();
+		}
+	}
+
+}

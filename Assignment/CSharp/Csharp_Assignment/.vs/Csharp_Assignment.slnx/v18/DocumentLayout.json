@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\dotnet_training\\Assignment\\CSharp\\Csharp_Assignment\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1D7A1ACC-E4E1-4071-9F56-3D2D92B044E1}|Csharp_Assignment\\Csharp_Assignment.csproj|c:\\dotnet_training\\assignment\\csharp\\csharp_assignment\\csharp_assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D7A1ACC-E4E1-4071-9F56-3D2D92B044E1}|Csharp_Assignment\\Csharp_Assignment.csproj|solutionrelative:csharp_assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\dotnet_training\\Assignment\\CSharp\\Csharp_Assignment\\Csharp_Assignment\\Program.cs",
+              "RelativeDocumentMoniker": "Csharp_Assignment\\Program.cs",
+              "ToolTip": "C:\\dotnet_training\\Assignment\\CSharp\\Csharp_Assignment\\Csharp_Assignment\\Program.cs",
+              "RelativeToolTip": "Csharp_Assignment\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-25T06:47:20.768Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
