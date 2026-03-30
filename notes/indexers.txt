@@ -1,0 +1,186 @@
+indexers 
+	allow an object to be indexed like an array
+	if we define an indexer for a class, then the class object behaves similar to a virtual array
+
+	*Eg: cobj[0], cobj[2]
+	indexers are like properties with get and set accessors
+	unlike properties they do not have names and uses the 'this' keyword	
+	while Properties get or set a specific datamember/field value, indexers get or set a value for a field at a particular index
+	Can be overloaded
+
+
+
+class Checkindexers{
+	string[] UserName = new string[3];
+
+	//define indexer for the array field
+	public string this [int i]{
+		get {return UserName[i]; }
+		set { UserName[i] = value; }
+	}
+
+	//string indexer value
+	public string this(string s]{
+		get{
+			foreach(string  str in UserName)
+			{
+				if(str.To
+lower() == s.ToLower()){
+					return str;
+				}
+			}
+			return null;
+		}
+	}
+}
+class IndexersEg{
+	static void Maind(){
+		Users users = new Users();
+		
+		//setting values using integer indexer
+		users[0] = "Barani";
+		users[1] = 'Athul";
+		users[2] = "Karthi";
+		
+		//Accessing the indexer using integer index
+		for(int i=0;i<3;i++){
+			Write(users[i];
+		}
+		// accessing the string index
+		Write(users["Barani"]);
+		write(users["Athul"]);
+		write(users["Karthi"]);
+		
+	}
+}
+
+`````````````````````````````````````````````````````````````````````
+
+class Flowers{
+	string Name;
+	string Color;
+	public Flowers(string name, string color){
+		Name = name 
+		Color = color;
+	}
+	public void Display(){
+		Write(Name + Color);
+	}
+}
+
+class Flowervase{
+	Flowers[]  fobj = new Flowers[5];
+
+	public Flowers this[int index]{
+		get {return fobj[index];}
+		set { fobj[index] = value;}
+	}
+}
+
+class IndexierEg@{
+	static void Main(){
+		Flowervase fv = new Flowervase();
+		fv[0] = new Flowers("Roses", "Red");
+		fv[1] = new Flowers("Lilies", "Yellow");
+		fv[2] = new Flowers("Tulip", "white");
+
+		for(int i=0;i<3;i++){
+			fv[i].Display()
+		}
+	}
+}
+
+````````````````````````````````````````````````````````````````````````
+
+class Employees{
+	Public int Id {get; set;}
+	public string Name {get; set;}
+	public string JobDescription {get; set;}
+	PUBLIC double Salary {get; set;}
+	public string Department {get; set;}
+
+	//declaring indexers for the class employee
+	public object this[int index]{
+		get{
+			if(index == 0)
+				return Id;
+			elseif(index == 1)
+				return Name;
+			elseif(index == 2)
+				return JobDescription;
+			elseif(index == 3)
+				return Salary;
+			elseif(index == 4)
+				return Department;
+			else
+				return null;	
+		}
+		set{
+			if(index == 0)
+				Id = Convert.ToInt32(value)
+			elseif(index == 1)
+				Name = value.ToString();
+			elseif(index == 2)
+				JobDescription = value.ToString();
+			elseif(index == 3)
+				Salary = Convert.ToDouble(value)
+			elseif(index == 4)
+				Department = value.ToString;
+			else
+				return null;	
+		}
+	}
+	//overloading
+	public object this[string index]{
+		get{
+			if(index.ToLOwer() == "id")
+				return Id;
+			else if(index.ToLower()=="name"
+				return Name;
+			else if(index.ToLower()=="jobdescription"
+				return JobDescription;
+			elseif(index.ToLower()=="salary"
+				return Salary;
+			else if(index.ToLower()=="dept"
+				return Department;
+			else
+				return null;
+
+		}
+		set{
+			if(index=="Id")
+				id = Con.toint32(value)
+			elseif(index == "name")
+				Name = value.ToString()
+			elseif(index == "jobdescripton")
+				JobDe = value.ToString()
+			elseif(index == "salary")
+				salary = value.ToString()
+			elseif(index == "ndept")
+				DEpartment = value.ToString()
+
+		}
+	}
+}
+class IndexersEg3{
+	static void Main(){
+		Employees emp = new Employees{
+			Id = 1,
+			Name = "Dharun",
+			JobDescription = "Software",
+			Salary = 450000	,
+			DEpartment = "IT"
+		};
+		Write(emp[0]);
+		write(emp[1]);
+		Write(emp[3]);
+		write(emp[4]);
+		emp[1] = "Arun";
+		Write(emp[1]);
+
+		// with string index
+		emp["id"] = 10;
+		emp["name] = "Mathi"
+		write(emp[id] + emp[name]);
+	}
+}

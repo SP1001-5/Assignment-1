@@ -1,0 +1,127 @@
+Equals
+	-> == checks whether two operands are equal or not, and the Object.Equals() checks if 2 object instances are equal or not
+	->object to object comparison can be done
+	->it will be overloaded
+
+ReferenceEquals
+	->refernceequals checks if two objects are pointing to the same location
+	->address will be compared, data will not be compared
+
+CompareTo
+
+	->this method acts upon 2 value(like strings or numbers)
+	->It returns int value (-1, 0, 1)
+	1 if str1<str2
+	-1 if str1>str2
+	0 if str1==str2
+
+
+class OperatorEg{
+	static void Main(){
+		EqualityOperators();
+		SBEqualOps();
+	}
+
+	public static void EqualityOperators(){
+		//value equality
+		int x = 5, y = 5;
+		Write(x==y); //true
+		write(x.Equals(y); //true
+	
+		//refernce equality
+		Program p1 = new Program();
+		Program p2 = p1;
+		Write(p1 == p2); //true
+		write(object.Equals(p1,p2)); //true
+		write(object.ReferenceEquals(p1,p2)); //true
+		
+		string str1 = "Hello";
+		string str2 = "hello";
+		write(str1 == str2); //false
+		write(object.Equals(str1,str2)); //false
+		write(object.RefernceEquals(str1,str2); //false
+		write(str1.CompareTo(str2)); //1
+
+		const int a =5;
+		const int b =6;
+		const int c =5;
+		write(a.CompareTo(b)); //-1
+		write(b.CompareTo(a)); //1
+		write(c.CompareaTo(a); //0
+	}
+
+	public static void SBEqualOps(){
+		StringBuilder sb1 = new StringBuilder();
+		stringBuilder sb2 = new StringBuilder();
+	write(object.ReferenceEquals(sb1,sb2)); //false
+	sb1=sb2;
+	write(object.ReferenceEquals(sb1,sb2)); //true
+		object obj1 = new StringBuilder("Hello");
+		object obj2 = "Hello";
+		Write(obj1 == obj2); //false
+		write(obj1.Equals(obj2)); //false
+	}
+}
+
+
+
+`````````````````````````````````````````````````````````````
+
+class Student : IComparable{
+	public string Name {get; set;}
+	public int Marks {get; set;}
+
+	public void CompareStudentName(){
+		Student[] studarray = new Student[]
+		{
+			new Student(){Name= "Rithika",marks = 80},
+			new Student(){Name= "Manisha", marks = 90},
+			new Student(){Name= "Balaji", marks = 70}
+		};
+		Array.Sort(studarray);
+		foreach(var s in studarray){
+			Write(s.name);
+		}
+	}
+
+	public int CompareTo(object obj){
+		Student studobj = obj as Student; //typecasting object type to student type
+		if(stdobj)!= null){
+			return this.Name.CompareTo(Stdobj.Name);
+		}
+		return -1;
+	}
+}
+class ComparisonEg{
+
+	static void Main(){
+		string[] fruits = {"Orange", "banana", "Apple"};
+		Array.Sort(fruits);{
+			Write(s);
+		}
+
+		Student stud = new Student();
+		stud.ComparaStudentsNaem();
+
+		Marks m = new Marks();
+
+		Student s1 = new Student
+		{
+			Name = "Deepika",
+			Marks = 78
+		};
+		Student s2 = new STudent2
+		{
+			Name = "Adhi", 
+			Marks = 75
+		};
+		Write(m.Compare(s1,s2));
+		.Read();	
+	}
+
+}
+class Marks : IComparer<student>{
+	public int Compare(Student x, Student y){
+		return x.Marks.CompareTo(y.Marks);
+	}		
+}

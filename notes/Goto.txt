@@ -1,0 +1,32 @@
+Goto 
+
+Goto Lable :     are used to transfer control with in the function
+		they are used with any valid identifiers followed by ':'
+		they are unstructured way of controlling the program
+
+
+`````````````````````````````````````````````````````````````
+
+Program
+
+internal class Program{
+	static void Main(string[] args){
+		Write("Firts");
+		goto infinite;
+		write("Second");
+		infinite:
+		Write("Third");
+		goto label1;
+		Write("Unreachable code");
+		label1:
+		Write("Bye for now");
+		Wdoagain:
+		Write("Enter a number");
+		int num = Coovert.toint32(console.Write());
+		if(num > 10){
+			Write("reenter number");
+			goto doagain;
+		}
+	}	
+}
+

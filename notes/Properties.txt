@@ -1,0 +1,65 @@
+Properties
+
+	-> are named members of classes, structures and interfaces
+	-> member varaibles of a class/Structures are called fields
+	-> properties are an extension of fields that are accessed using the accessors
+	->The accessors helps to read or write values to the private field
+	-> do not store the locations, instead have accessors to read/write/compute values
+
+ToSTring()
+
+	-> overriding from the object class  
+
+`````````````````````````````````````````````````````````
+
+class Student{
+	//automatic Properties
+	public sloat Marks { get; set; }
+	public char Grade {get;} = 'A';
+	public int Percentage {get; private set;}
+	public string Phone {get; protected set; }
+
+	//Manual Properties
+	private string code = "N.A";
+	private string Name = 'Unknown";
+	private int age = 30;
+
+	//declaring property for above fields
+	public String Code{
+		get{ return code;}
+		set{ code = value;}
+	}
+	public string uname{
+		get{ return Name; }
+		set{ Name = value; }
+	}
+	public int uage{
+		get{ return age; }
+	}
+
+	public override string ToSTring(){
+		percentage = 95;
+		return "Code = " + code + ", Student name = " + Name + "and age =" + age
+		
+
+	}
+} 
+
+class PropertiesEg : Student{
+	static void Main(){
+		Student s = new Student();
+		s.Code = "1001";
+		s.uname = "Akash";
+
+		Write(s.Code);
+		write(s.uname);
+		write(s.uage);
+		s.Code = "2009";
+		write(s.ToSTring());
+
+		s.Marks = 78;
+		//to access protected create object of child class
+		PropertiesEg pg = new PropertiesEg()
+		pg.Phone = "98420";
+		
+}

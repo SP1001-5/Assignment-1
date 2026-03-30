@@ -1,0 +1,183 @@
+Polymorphism ->Static Polymorphism / Early binding / static binding - Compiler knows which one will execute (Overloading)
+		
+	     ->Dynamic Polymorphism / Late binding / dynamic binding  - the object will be changed at the running time 
+		   - assigning more defined variable (rectangle) to a less defined variable (shape) is called covariance (Overriding)
+
+  1. Function Overloading :
+	A concept that i seen within a class
+	A function with same name but different number of arguments or data types
+	Signatures in terms of the arguments will differ
+
+  2. Operator Overloading :
+	To effectively be able to use operators that normally work with value types, also work with reference types
+
+  3. Overridimg :
+	is seen across related classes
+	the function signatures have to be the same
+	we cannot change access specifiers / modifiers
+	
+
+```````````````````````````````````````````````````````
+
+Function Overloading:
+
+class Overloadingeg{
+	public int add(int x, int y){
+		return x + y;
+	}
+	public float add(int x, int y, int z){
+		return x + y;
+	}
+	public static void swap(int n1, int n2){
+		n1 = n1+n2;
+		n2 = n1-n2;
+		n1 = n1-n2;
+	}
+	public static void swap(char c1, char c2){
+		char temp -' ';
+		temp = c1;
+		c1 = c2;
+		c2 = temp;
+	}
+}
+class TestOverload{
+	static void Main(){
+	OverlaodingEg ov = new OverloadingEg();
+	ov add(5,4);
+	ov add(10,3,4);
+	OverloadingEg swap('a' , 'b');
+	OverloadingEg swap(5,8);
+	Console.Read();
+	}
+}
+
+``````````````````````````````````````````````````````````
+
+Operator Overloading:
+
+
+class Box{
+	public int Length;
+	public int breadth;\
+
+	public static Box operator +(Box box1, Box box2){
+		Box temp = new Box();
+		temp.length = box1.length + box2.length;
+		temp.breadth = box1.breadth + box2.breadth;
+ 		return temp;
+	}
+}
+
+class OperatorOver{
+	static void Main(){
+		
+		Box b1 = new Box();
+		b1.length = 5;
+		b1.breadth = 3;
+		Vox b2 = new Box();
+		b2.length = 4;
+		b2.breadth = 5
+		Box b3 = b1+b2;
+		Write(b3.length + b3.breadth);
+		b3++;
+		Console.Read();
+	}
+}
+
+`````````````````````````````````````````````````````````````
+
+Overriding:
+
+Virtual : It is used to provide the permission to the child class that the child can use its method
+
+
+class SHape{
+	protected float R, L, B;
+	public virtual float Area(){ //virtual is used to provide permission to the child class
+		return 3.14f * R * R;
+	}
+	
+	public virtual float Circumference(){
+		return 2 * 3.14f * R;
+	}
+}
+
+class Rectangle : Shape{
+	public void GetLB(){
+		L = float.Parse(Console.ReadLine());
+		B = Convert.ToSingle(Consle.ReadLine());
+	}
+	
+	public override float Area(){
+		GetLB();
+		return L * B;
+	}
+	public override float Circumference(){
+		return 2 * (L + B);
+	}
+}
+
+class Circle : shape {
+	public void GetRadius(){
+		R = float.Parse(console.readLine());
+
+	}
+}
+
+class OveridingEg{
+ 	static void Main(){
+		Rectangke rect = new Rectangle();
+		write(rect.Area());
+		write(rect.Circumference());
+		Circle c = new Circle();
+		c.GetRadius();
+		write(c.Area() + c.Circumference());
+
+		//Covariance 
+		Shape s = new Shape():
+		s = new Rectangle();
+		Write(s.Area);
+		s = new Circle();
+		write(s.Area)
+		//Covariance
+	}	
+}
+
+``````````````````````````````````````````````````````````
+
+Namehiding :
+
+new in child : it is used to hide the method or name in the child class from the parent class
+		it is used to remove the warning alone 
+		Without it the program will give the output
+
+class A1{
+	public int i = 0;
+	public void MethodHide(string s){
+		Write("Message from base" + s);
+	}
+}
+
+class B1 : A1{
+	public new int i; //name hiding
+	public B1(int a, int b):{
+		base.i = a //assignment to bse i 
+		i = b;
+	}
+
+	public new void MethodHide(string str){ //method hiding
+		write("Message from derived"+str	}
+	public void SHow(){
+		Write(base.1);
+		write(i);
+	}
+}
+
+
+class Namehiding{
+	static void Main(){
+		B1 b = new  B1(2, 5);
+		b.Show()
+		Console.Read();
+	}
+}

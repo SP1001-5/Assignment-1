@@ -13,12 +13,14 @@ internal class TypeConversion{
 
 
 	//value type to refernce type is called boxing
+
 	public void Boxing(){
 		int i =10
 		object obj; //refernce 
 		obj = i   //value to refernce
 		string s = "AAAA"
 		obj = s   //implicit casting
+
 	//reference type to value is unboxing
 		float salary;
 		salary = float.Parse(console.ReadLine());
@@ -30,8 +32,8 @@ internal class TypeConversion{
 
 	public void Try_Parsing(){
 		int n =100;
-float f =23456789.067f;
-n = int.TryParse(f);
+		float f =23456789.067f;
+		n = int.TryParse(f);
 
 		string str = "1000g";
 		int i = int.Parse(str); //exception
@@ -56,7 +58,7 @@ class Others{
 	public static void Ternary_func(){
 		int num = 10;
 		bool b;
-		b=num == 10 ? true:false;
+		b = num == 10 ? true:false;
 		COnsole.WriteLine(b);
 	}
 	static void NullConcept(){
@@ -75,4 +77,4 @@ class Others{
 	
 
 ->null cannot be given to value type
-->if else can be replaced with null coalescing operator
+->if else can be replaced with null coalescing operator(??)

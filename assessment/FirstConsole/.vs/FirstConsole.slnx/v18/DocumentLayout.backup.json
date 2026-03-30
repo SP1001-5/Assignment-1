@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\dotnet_training\\assessment\\FirstConsole\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2AB3EDBA-3878-4157-9B26-831FE2D8AAFC}|FirstConsole\\FirstConsole.csproj|c:\\dotnet_training\\assessment\\firstconsole\\firstconsole\\inheritanceeg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AB3EDBA-3878-4157-9B26-831FE2D8AAFC}|FirstConsole\\FirstConsole.csproj|solutionrelative:firstconsole\\inheritanceeg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2AB3EDBA-3878-4157-9B26-831FE2D8AAFC}|FirstConsole\\FirstConsole.csproj|c:\\dotnet_training\\assessment\\firstconsole\\firstconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2AB3EDBA-3878-4157-9B26-831FE2D8AAFC}|FirstConsole\\FirstConsole.csproj|solutionrelative:firstconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "InheritanceEg.cs",
+              "DocumentMoniker": "C:\\dotnet_training\\assessment\\FirstConsole\\FirstConsole\\InheritanceEg.cs",
+              "RelativeDocumentMoniker": "FirstConsole\\InheritanceEg.cs",
+              "ToolTip": "C:\\dotnet_training\\assessment\\FirstConsole\\FirstConsole\\InheritanceEg.cs*",
+              "RelativeToolTip": "FirstConsole\\InheritanceEg.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T09:36:16.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\dotnet_training\\assessment\\FirstConsole\\FirstConsole\\Program.cs",
               "RelativeDocumentMoniker": "FirstConsole\\Program.cs",
-              "ToolTip": "C:\\dotnet_training\\assessment\\FirstConsole\\FirstConsole\\Program.cs*",
-              "RelativeToolTip": "FirstConsole\\Program.cs*",
-              "ViewState": "AgIAABIAAAAAAAAAAAA4wBkAAAAUAAAAAAAAAA==",
+              "ToolTip": "C:\\dotnet_training\\assessment\\FirstConsole\\FirstConsole\\Program.cs",
+              "RelativeToolTip": "FirstConsole\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-23T09:58:11.269Z",
               "EditorCaption": ""

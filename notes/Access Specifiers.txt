@@ -3,12 +3,87 @@ Access Specifiers :
 
   1.Public
 	->All classes within the assembly (day 3) or outside the assembly(day 1 or day 2) can access the  public members
-	->WE just need an object to access it
+	->WE just need an object of the class where public members are declared, to access it
 
   2.Private
+	-> Accessible only to the class where it is declared 	
+	-> no access anywhere
 
   3.Protected
+	-> are accessible to all the derived types within the assembly or outside the assembly
 
-  4.Internal
+  4.Internal 
+	->acts like public access specifier, allowing both derived and non-derived classes
+	->but only within the assembly
 
   5.Internal Protected / protected internal
+	-> has the properties of both protected and internal specifiers
+	-> works within derived class of same assembly also from different assembly
+
+
+note:
+	->by default all the classes in c# are internal
+	->By default all members of the class are private
+
+				  internal     internalprotected
+same assembly nonderived class	    yes 		yes
+
+same assembly derived type 	    yes via internal   yes via protected
+
+different assembly non-derived 	    No 			No
+
+different assembly derived          NO  		Yes via protected
+
+``````````````````````````````````````````````````````
+
+namespace Day4{
+	public class AccessSpecifiers{  //parent
+		public int publicdata;
+		private int privatedata;
+		internal in internaldata;
+		protected int protecteddata;
+		internal protected int internalprotecteddata;
+
+		public void show(){
+			publicdata=10;
+			privatedata = 15; //access
+			internaldata = 20; //access
+			protecteddata = 30;
+			internalprotecteddata = 40;
+		}
+	}
+
+	internal class Program : AccessSpecifiers{
+		static void Main(){
+			AccessSpecifiers as = new AccessSpecifier();
+			ac.publicdata = 20;
+			ac.privatedata = 25; //no access
+			ac.internaldata = 30;
+			ac.internalprotecteddata = 40;
+			Program p = new Program();  //child object for protected data
+			p..protecteddata = 50;
+		}
+	}
+}
+
+
+
+//add refernce of Day4 in accesstest only then you can access
+using System;
+using Day4;
+namespace AccessTest{
+
+	class Accesstest{
+		
+	}
+
+	internal class TestClass : AccessSpecifiers{
+		static void Main(straing[] args){
+			AccessSpecifier ac = new AccessSpecifier();
+			ac.publicdata = 50;
+			TestClass tc = new TestClass();
+			tc.protecteddata = 60;
+			tc.internalprotecteddata =70;
+		}
+	}
+}

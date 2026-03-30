@@ -1,6 +1,8 @@
 Constructor Chaining
 
 this -> it is used to invoke the other COnstructor that matches the parameter 
+     -> is used for constructor chaining within the same class
+     ->Pointer that points to the current instance of the same class
 
 class Customer{
 	int age;

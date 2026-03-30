@@ -31,3 +31,23 @@ garbage collector
 Day 3:
 Types of Constructors
 Access Specifiers
+Inheritance
+Polymorphism
+Base Derived
+Name hiding
+
+Day 4 :
+Abstraction
+Properties
+Indexers
+interface
+explicit implementation of interfaces
+interface with properties
+
+Day 5:
+Goto
+Garbage Collection
+Type of class
+diff in interface and abstract class
+Equals
+Compare To
