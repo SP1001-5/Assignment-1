@@ -5,6 +5,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Security.Cryptography.X509Certificates;
 
 namespace FirstConsole
 {
@@ -32,27 +33,99 @@ namespace FirstConsole
 
     internal class InheritanceEg
     {
-            static void Main()
+        //    int c = 0;
+        //    static void Main(string[] args)
+        //    {
+        //        int a, b;
+        //        InheritanceEg ig = new InheritanceEg();
+        //        try
+        //        {
+        //            Console.Write("Two numbers");
+        //            a = int.Parse(Console.ReadLine()); //format exce
+        //            b = int.Parse(Console.ReadLine());
+
+        //            ig.c = a / b; //zero exception
+        //   int[] arr = { 1, 2, 3, 4}
+        //            ;
+        //            Console.Write(arr[6]); //range exce
+        //            Console.Write(ig.c);
+        //        }
+        //        catch (DivideByZeroException de)
+        //        {
+        //            Console.Write(de.Message);
+        //            Console.Write("Cannot divide number by zero");
+
+        //    }
+        //        catch (FormatException fe)
+        //        {
+        //            Console.Write(fe.Message + fe.Source);
+        //        }
+        //        catch (IndexOutOfRangeException ie)
+        //        {
+        //            Console.Write("You are trying to reach beyond your elements");
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            Console.Write("Something went Wrong");  // to handle all exceptions
+        //            Console.Write(e.Message);
+        //        }
+        //        finally
+        //        {
+        //            Console.Write("Reached finally");
+        //            Console.Write(ig.c);
+        //        }
+        //    }
+        public static void MarkToGrade(int mark)
+        {
+            if (mark <= 100 && mark >= 90)
             {
-                int a = 5, b = 5, c = 0;
-
-                c = a + b;
-                Console.WriteLine(c);
-
-                Box b1 = new Box();
-                b1.length = 5;
-                b1.breadth = 3;
-
-                Box b2 = new Box();
-                b2.length = 4;
-                b2.breadth = 5;
-
-                Box b3 = b1 * b2;
-                Console.WriteLine($"The Total Lengths is {b3.length} and total breadth is {b3.breadth}");
-
-                //b3++;
-                //Console.WriteLine($"Unary operator is {b3.length} Breadth {b3.breadth}");
-                Console.Read();
+                Console.WriteLine("Your grade is A");
             }
+            else if (mark < 90 && mark >= 70)
+            {
+                Console.WriteLine("Your grade is B");
+            }
+            else if (mark < 70 && mark >= 50)
+            {
+                Console.WriteLine("Your grade is C");
+            }
+            else if (mark > 0 && mark < 50)
+            {
+                Console.WriteLine("Your grade is D");
+            }
+            else
+            {
+                throw new MarkException("Fill your Mark");
+            }
+
         }
+
+        static void Main()
+        {
+            int marks;
+            Console.WriteLine("Enter Your Mark :");
+            try {
+                marks = Convert.ToInt32(Console.ReadLine());  
+                MarkToGrade(marks);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (MarkException m)
+            {
+                Console.WriteLine(m.Message);
+            }
+            Console.Read();
+        }
+    }
+
+
+
+    class MarkException : ApplicationException
+    {
+        public MarkException(string s) : base(s) { }
+    }
 }
+        
+

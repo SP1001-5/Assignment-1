@@ -3,7 +3,9 @@ Structures
   -> They are light weight that represent small amount of data
   -> As they are allotted in stack Memory, they are More memory - efficient
   ->hence can give better performance (garbage overhead not applicable)
-  ->can be used as safer alternatices to primitive data types. By encapsulating 
+  ->can be used as safer alternatices to primitive data types. By encapsulating related data, and provide methods to access
+  ->cannot have empty constructors unlike Classes
+  ->cannot hav epartial initialization of fields int the constructor (should initialize all fields before exiting constructor)
 
 
 ```````````````````````````````````````````````````````````````

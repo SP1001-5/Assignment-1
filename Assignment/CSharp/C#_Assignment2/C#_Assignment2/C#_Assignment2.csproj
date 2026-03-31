@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>C__Assignment2.Array_Program</StartupObject>
+    <StartupObject>C__Assignment2.StringEg</StartupObject>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -53,6 +53,7 @@
     <Compile Include="Array_Program.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringEg.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

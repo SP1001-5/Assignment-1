@@ -51,3 +51,10 @@ Type of class
 diff in interface and abstract class
 Equals
 Compare To
+Structures with instances
+
+Day 6;
+Exception handling
+User Defined Exception
+Checked and Unchecked 
+Collections

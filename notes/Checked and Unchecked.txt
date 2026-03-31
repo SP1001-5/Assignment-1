@@ -1,0 +1,53 @@
+Checked and Unchecked
+
+	Is an arithmetic wrap around overflow of int values
+
+checked : control overflows over perfomance
+unchecked : favours performance over overflow
+
+Exceptions provide a mechanism for identifying and responding to errors/conditions
+  1.What went wrong - type of exception thrown
+  2.Where did it go wrong - stacktree
+  3.Why did it go wrong - message 
+
+DO's :
+ 	Use try/finally blocks around that block of code where there are poterntial errors
+	Make all catches centralized
+	finally to be used to clean up
+
+Don'ts :
+	Avoid throwing exceptions if you can check with a simple if clause
+	Avoid throwing Exception() class object as it swallows all other exceptions as it is broad class
+	Do not have empty catches
+
+``````````````````````````````````````````````````````````
+
+static int maxInt = 2147483647;
+
+static int CheckOver(){
+	int x = 0;
+	try{
+		x = checked(maxInt + 10);
+	}	
+	catch(OverFlowException o){
+		Write("Checked : " + o.ToString());
+	}
+	return x;  // x is 0
+}
+
+static int UnCheckOver(){
+	int x = 0;
+	try{
+		x = maxInt + 10;
+	}	
+	catch(OverFlowException o){
+		Write("UnChecked : " + o.ToString());
+	}
+	return x; //overflow is suppressed,hence x is -2147483639
+}
+
+static void Main(){
+	write("\n",CheckOver());
+	write("\n",UnCheckOver());
+
+}
