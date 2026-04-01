@@ -1,0 +1,115 @@
+Generics Eg
+
+
+
+internal class Generics1<T>{
+	//generic fields
+	private T data;
+
+	//generic property for the field
+	public T Data{
+		get {return this.data;}
+		set {this.data = value;}
+	}
+
+	//generic method
+	public void Display<T>(string msg, T var1){
+		Write(msg , var1);
+	}
+	
+}
+
+class TestGeneric{
+	static void Main(){
+		Genetics1<string> refObj = new Generics1<string>();
+		refObj.Data = "Infinite";
+		refObj.Display<int>("Integer", 15);
+		refObj.Display<char>("string",'A');
+		Write(refObj.Data);
+		
+		Generics1<float> genfloat2 = new Generics1<float>();
+		genfloat.Data = 123.45f
+		write(genfloat.Data);
+		
+	}	
+}
+
+
+```````````````````````````````````````````````````````````
+
+internal class AllGenerics<T>{
+	private T genericField;
+	
+	public T GenericProperty{get; set; }
+	
+	public AllGeneric(T value){
+		this.geneticFIeld = value;
+	}
+
+	public T genericMethod(T genericParameter){
+		write(typeof(T).ToString() + genericParameter);
+		write(typeof(T).toString() + genericField);
+		return genericField; 
+	}	
+}
+
+class Tester{
+	static void Main(){
+		AllGenerics<int> intallgen = new AllGenerics<int>(5); 
+		intallgen.genericMethod(20);
+		intallgen.GenericProperty = 30;
+		write(intallgen.GenericProperty);
+
+		AllGenerics<string> strallgen = new strGenerics<string>("Hi generics");
+		strallgen.genericMethod("String");
+		strallgen.genericProperty = "hi";
+		write(strallgen.genericProperty);
+
+		GenericIndexers<float> genfloat = new GenericIndexers<float>();
+		genfloat.Name = "jaya";
+		genfloat var1 = 89.65f;
+		genfloat[0] = 5.5f;
+		genfloat[2] = 54.3f
+		genfloat[1] = 23.4f;
+
+		genfloat[1.0f] = 5.5f;
+		genfloat[2.4f] = 54.3f
+		genfloat[4.3f] = 23.4f
+		GenericIndexers<float>
+	}	
+}
+
+class GenericIndexers<T>{
+	private T[] data = new T[3];
+	private T var1;
+	private string name;
+
+	public string Name{
+		get{ return name;} set{name=value;}
+	}
+
+	public T var1{
+		get {return var1; }
+		set {var1 = value; }
+	}
+
+	//indexer 1
+	public T this[int index]{
+		get {return data[index];}
+		set { data[index] = value; }
+	}
+	
+	//indexer 2
+	public T this[float index]{
+		get {return data[index];}
+		set { data[index] = value; }
+
+	}
+
+	//indexer 3
+	public T this[string index]{
+		get {return data[convert.ToInst32(index)];}
+		set { data[convert.Toint32(index)] = value; }
+
+	}
+}

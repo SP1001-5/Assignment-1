@@ -1,0 +1,44 @@
+multicast Delegates
+	is an phenomenon where we can make use of one delegate object to refer to various methods
+	the delegate object invokes the methods in succession
+	we can add or remove methods to the multi casted object using a '+' and '-'
+	since it works in succession, we need to be aware that we cannot get any return values of individual methods, and only the last method in the call stack
+
+public delegate void MultiDel()
+
+class MultiCastDelegates{
+	static void Main(){
+		
+		MultiDel m1, m3, m3, m4;
+		m1 = new MultiDel(Method1);
+		m2 = new MultiDel(Method2);
+		m3 = new MultiDel(Method3);
+		m4 = m1 + m2+ m3; // use + sign to multicast - sign to remove
+		
+		m4();
+		
+		m4 = m1 + m2 - m3;
+		m4();
+
+		//2nd way
+		MultiDel m = new MultiDel(Method1);
+		m += Method2;
+		m+= Method3;
+		m();
+
+		m-=Method2
+		m();
+	}
+
+	public static void Method1(){
+		Write ("Method1");
+	}
+
+	public static void Method2(){
+		Write ("Method2");
+	}	
+
+	public static void Method3(){
+		Write ("Method3");
+	}		
+}

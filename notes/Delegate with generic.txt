@@ -1,0 +1,31 @@
+Delegate with generic
+
+public delegate T Trans<T> (T arg);
+
+class Util{
+
+	/delegate as an argument to a method
+	public static void Transform<T>(T[] values, Trans<T> t){
+		for(int i =0; i<values.Length; i++){
+			values[i] = t(values[i]);
+		}
+	}
+}
+
+class GenericDelegates{
+	static void Main(){
+		int[] arr = new int[] {4,5,6};
+		
+		Util.Transform<(arr, Square);
+		foreach(var n in arr){
+			Write(n);
+		}
+	}	
+	public static int Square(int x){
+		return x * x;
+	}
+
+	public static float Square(float x){
+		return x*x;
+	}
+}

@@ -1,0 +1,71 @@
+Delegates
+	is an object that refers to a method, Holds reference to methods of a class
+	Provides a good way to encapsulate the methods
+	type safe pointer of any method
+	delegates are used to implement call back and even driven program
+	delegates can be chained together as 2 or more methods called or an event
+	Delegates are used to invoke anonymous methods
+
+Note :	delegate/s can point to method/s which agree on the signature (matching signature)
+
+
+``````````````````````````````````````````````````````````````````````
+
+//declaration of delegate
+public delegate void EmpDelegate(string s); 
+
+delegate int NumberChange(int n);
+
+class DelegatesEg2{
+	static int num = 10;
+	public static int AddNum (int p){
+		num+=p;
+		return num;
+	}
+
+	public static int MulNul (int p){
+		num*=p;
+		return num;
+	}
+
+	public static int getNum(){
+		return num;
+	}
+}
+
+
+class DelegatesEg{
+	public static void AcceptUser(string username){
+		write("Hello" + username)
+	}
+	
+	public void DisplayUser(string message){
+		write(message);
+	}
+	
+	public void GetUser(){
+		write("getting user Details..");
+	}
+}
+
+class TestDelegate{
+	static void Main(){
+		DelegatesEg deleg = new DelegatesEg()	
+		EmpDelegate ed1 = new  EmpDelegate(DelegatesEg.AcceptUser);
+		EmpDelegate ed2 = new  EmpDelegate(deleg.DisplayUser);
+		ed1.Invoke("Radha");
+		ed1("Krishna");
+		ed2("Giriraj Sivaraj");
+
+		NumberChanger nc1 = new NumberChanger(DelegatesEg2.AddNum);
+		NumberChanger nc2 = new NumberChanger(DelegatesEg2.MulNum);
+		nc1(25);
+		Write(DelegatesEg2.getNum());
+		nc2(5);
+		Write(DelegatesEg2.getNum());
+
+		
+	}
+	
+
+}
