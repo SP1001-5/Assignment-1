@@ -1,7 +1,0 @@
-C:\dotnet_training\Assignment\CSharp\Todolist\Todolist\bin\Debug\Todolist.exe.config
-C:\dotnet_training\Assignment\CSharp\Todolist\Todolist\bin\Debug\Todolist.exe
-C:\dotnet_training\Assignment\CSharp\Todolist\Todolist\bin\Debug\Todolist.pdb
-C:\dotnet_training\Assignment\CSharp\Todolist\Todolist\obj\Debug\Todolist.csproj.AssemblyReference.cache
-C:\dotnet_training\Assignment\CSharp\Todolist\Todolist\obj\Debug\Todolist.csproj.CoreCompileInputs.cache
-C:\dotnet_training\Assignment\CSharp\Todolist\Todolist\obj\Debug\Todolist.exe
-C:\dotnet_training\Assignment\CSharp\Todolist\Todolist\obj\Debug\Todolist.pdb
