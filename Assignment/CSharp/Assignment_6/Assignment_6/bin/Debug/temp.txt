@@ -1,0 +1,3 @@
+This is a new file created at existing directory 
+which also has 1 line 
+we need to add more lineslets see the no of lines
