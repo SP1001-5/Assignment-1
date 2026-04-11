@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Assignment_7/Assignment_7.csproj" Id="247ae0bb-39cc-468f-9bf4-7a390abb97f2" />
+  <Project Path="Travel/Travel.csproj" Id="76702a4a-8bb2-46f5-8d80-254b959f37a1" />
+  <Project Path="TravelConcessionLibrary/TravelLibrary.csproj" Id="997636d3-c705-4d14-8c9d-cdcee282f9d8" />
+</Solution>

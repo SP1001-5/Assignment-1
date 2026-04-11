@@ -1,0 +1,6 @@
+C:\dotnet_training\Assignment\CSharp\Assignment_7\TravelConcessionLibrary\bin\Debug\TravelConcessionLibrary.dll
+C:\dotnet_training\Assignment\CSharp\Assignment_7\TravelConcessionLibrary\bin\Debug\TravelConcessionLibrary.pdb
+C:\dotnet_training\Assignment\CSharp\Assignment_7\TravelConcessionLibrary\obj\Debug\TravelLibrary.csproj.AssemblyReference.cache
+C:\dotnet_training\Assignment\CSharp\Assignment_7\TravelConcessionLibrary\obj\Debug\TravelLibrary.csproj.CoreCompileInputs.cache
+C:\dotnet_training\Assignment\CSharp\Assignment_7\TravelConcessionLibrary\obj\Debug\TravelConcessionLibrary.dll
+C:\dotnet_training\Assignment\CSharp\Assignment_7\TravelConcessionLibrary\obj\Debug\TravelConcessionLibrary.pdb
