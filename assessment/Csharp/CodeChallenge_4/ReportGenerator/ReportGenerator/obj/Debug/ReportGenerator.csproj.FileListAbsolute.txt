@@ -1,0 +1,7 @@
+C:\dotnet_training\assessment\Csharp\CodeChallenge_4\ReportGenerator\ReportGenerator\bin\Debug\ReportGenerator.exe.config
+C:\dotnet_training\assessment\Csharp\CodeChallenge_4\ReportGenerator\ReportGenerator\bin\Debug\ReportGenerator.exe
+C:\dotnet_training\assessment\Csharp\CodeChallenge_4\ReportGenerator\ReportGenerator\bin\Debug\ReportGenerator.pdb
+C:\dotnet_training\assessment\Csharp\CodeChallenge_4\ReportGenerator\ReportGenerator\obj\Debug\ReportGenerator.csproj.AssemblyReference.cache
+C:\dotnet_training\assessment\Csharp\CodeChallenge_4\ReportGenerator\ReportGenerator\obj\Debug\ReportGenerator.csproj.CoreCompileInputs.cache
+C:\dotnet_training\assessment\Csharp\CodeChallenge_4\ReportGenerator\ReportGenerator\obj\Debug\ReportGenerator.exe
+C:\dotnet_training\assessment\Csharp\CodeChallenge_4\ReportGenerator\ReportGenerator\obj\Debug\ReportGenerator.pdb
