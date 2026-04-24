@@ -1,0 +1,96 @@
+Assignment 1
+
+create database Assignment
+
+use Assignment
+
+--creating table clients
+create table Clients( Client_ID int Primary Key, Cname VARCHAR(40) Not Null,Address VARCHAR(30), 
+Email VARCHAR(30) Unique, Phone bigint, Business VARCHAR(20) Not Null 
+check (Business in('Manufacturing', 'Reseller', 'Consultant', 'Professional'))
+)
+
+--inserting values into the clients table
+insert into Clients (Client_ID ,Cname, Address ,Email, Phone, Business)
+values (1001, 'ACME Utilities','Noida', 'contact@acmeutil.com', 9567880032, 'Manufacturing'),
+(1002, 'Trackon Consultants', 'Mumbai', 'consult@trackon.com', 8734210090, 'Consultant'),
+(1003, 'MoneySaver Distributors', 'Kolkata', 'save@moneysaver.com', 7799886655, 'Reseller'),
+(1004, 'Lawful Corp', 'Chennai', 'justice@lawful.com', 9210342219, 'Professional')
+
+--selecting the data from client table
+select * from Clients
+
+--creating table departments
+create table Departments (Deptno int Primary Key, Dname VARCHAR(15) Not Null,
+Loc VARCHAR(20))
+
+--inserting values into the Department table
+insert into Departments(Deptno,Dname,Loc)
+values (10,'Design','Pune'), (20,'Development','Pune'),
+(30,'Testing','Mumbai'), (40,'Document','Mumbai')
+
+--selecting the data from department table
+select * from Departments
+
+--creating table Employees
+create table Employees (Empno int Primary Key, Ename VARCHAR(20) Not Null,
+Job VARCHAR(15), Salary int check(Salary>0),Deptno int,
+constraint fk_deptno Foreign Key(deptno) references Departments(Deptno))
+
+--inserting values into the Employee table
+insert into Employees ( Empno, Ename, Job, Salary,Deptno) 
+values(7001, 'Sandeep', 'Analyst', 25000, 10), (7002,'Rajesh',' Designer', 30000, 10),
+(7003 ,'Madhav','Developer', 40000, 20), (7004,'Manoj','Developer', 40000, 20),
+(7005,'Abhay','Designer',35000,10), (7006,'Uma','Tester',30000,30),
+(7007,'Gita','Tech. Writer',30000,40), (7008,'Priya','Tester',35000,30),
+(7009,'Nutan','Developer',45000,20), (7010,'Smita','Analyst',20000,10),
+(7011,'Anand','Project Mgr',65000,10)
+
+--selecting the data from the Employee table
+select * from Employees
+
+--creating table Projects
+create table Projects (Project_ID int Primary Key, Descr VARCHAR(30) Not Null,
+Start_Date DATE, Planned_End_Date DATE, Actual_End_date DATE ,
+Budget int check(Budget > 0), Client_ID int,
+constraint chk_actual_end_date check(Actual_End_date > Planned_End_Date),
+constraint fk_client foreign key (Client_ID) references Clients(Client_ID))
+
+--inserting values into the Projects table
+insert into Projects (Project_ID,Descr,Start_Date,Planned_End_Date,Actual_End_date,Budget,Client_ID)
+values(401,'Inventory','01-Apr-11','01-Oct-11','31-Oct-11',150000,1001),
+(402,'Accounting','01-Aug-11','01-Jan-12',Null,500000,1002),
+(403,'Payroll','01-Oct-11','31-Dec-11',Null,75000,1003),
+(404,'Contact Mgmt','01-Nov-11','31-Dec-11',Null,50000,1004)
+
+--selecting the data from Projects table
+select * from Projects
+
+--creating table EmpProjectTasks
+create table EmpProjectTasks(Project_ID int, Empno int, Start_Date DATE,
+End_Date DATE, Task VARCHAR(25) Not Null, Status VARCHAR(15) Not Null 
+check(Status in ('in progress', 'complete','cancelled')),
+constraint pk_project primary key (Project_ID, Empno),
+constraint fk_project_id foreign key(Project_ID) references Projects(Project_ID),
+constraint fk_empno foreign key(Empno) references Employees(Empno)
+)
+
+
+--inserting values into EmpProjectTasks Table
+insert into EmpProjectTasks(Project_ID,Empno,Start_Date,End_Date,Task,Status)
+values(401,7001,'01-Apr-11','20-Apr-11','System Analysis','complete'),
+(401,7002,'21-Apr-11','30-May-11','System Design','complete'),
+(401,7003,'01-Jun-11','15-Jul-11','Coding','complete'),
+(401,7004,'18-Jul-11','01-Sep-11','Coding','complete'),
+(401,7006,'03-Sep-11','15-Sep-11','Testing','complete'),
+(401,7009,'18-Sep-11','05-Oct-11','Code Change','complete'),
+(401,7008,'06-Oct-11','16-Oct-11','Testing','complete'),
+(401,7007,'06-Oct-11','22-Oct-11','Documentation','complete'),
+(401,7011,'22-Oct-11','31-Oct-11','Sign off','complete'),
+(402,7010,'01-Aug-11','20-Aug-11','System Analysis','complete'),
+(402,7002,'22-Aug-11','30-Sep-11','System Design','complete'),
+(402,7004,'01-Oct-11',null,'Coding','in progress')
+
+--selecting the data from EmpProjectTasks
+select * from EmpProjectTasks
+
