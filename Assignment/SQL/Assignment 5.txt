@@ -1,0 +1,60 @@
+Assignment 5 
+
+--1. Write a T-Sql based procedure to generate complete payslip of a given employee with respect to the following condition
+
+
+create or alter proc GeneratePayslip @empno int
+as 
+begin
+  declare @ename varchar(20), @sal int, @HRA int, @DA int, @PF int, @IT int,
+  @Deductions int, @grossSalary int, @netSalary int
+
+  select @ename = ename, @sal = sal
+  from EMP
+  where empno = @empno
+
+  set @HRA = (@sal/100) * 10
+  set @DA = (@sal/100) * 20
+  set @PF = (@sal/100) * 8
+  set @IT = (@sal/100) * 5
+
+  set @Deductions = @PF + @IT
+  set @grossSalary = @sal + @HRA + @DA
+  set @netSalary = @grossSalary - @Deductions
+
+  print 'Payslip Details'
+  print 'Employee ID : ' + cast(@empno as varchar(10))
+  print 'Employee name : ' + @ename
+  print 'Employee Salary : ' + cast(@sal as varchar(10))
+  print 'HRA : ' + cast(@HRA as varchar(10))
+  print 'DA : ' + cast(@DA as varchar(10))
+  print 'PF : ' + cast(@PF as varchar(10))
+  print 'IT : ' + cast(@IT as varchar(10))
+  print 'Deductions : ' + cast(@Deductions as varchar(10))
+  print 'Gross Salary : ' + cast(@grossSalary as Varchar(10))
+  print 'Net Salary : ' + cast(@netSalary as varchar(10))
+end
+
+GeneratePayslip @empno = 7566
+
+
+--2. Create a trigger to restrict data manipulation on EMP table during General holidays. 
+--Display the error message like “Due to Independence day you cannot manipulate data” 
+--or "Due To Diwali", you cannot manipulate" etc
+
+
+create or alter trigger HolidayRestriction
+on EMP
+for insert, update, delete
+as
+begin
+  declare @holiday_name varchar(50)
+  select @holiday_name = Holiday_name from Holiday 
+  where holiday_date =  cast(getdate() AS DATE);
+
+  if @holiday_name is not null
+  begin
+    raiserror ('Due to %s you cannot have data', 16, 1, @holiday_name);
+    rollback transaction
+end
+end
