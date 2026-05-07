@@ -1,0 +1,79 @@
+Code Challenge 6
+
+--1.	Write a query to display your birthday( day of week)
+select '01-10-2005' as Date,DATENAME(weekday,'01-10-2005') As Birthday
+
+
+--2.	Write a query to display your age in days
+select '01-10-2005' as B_Date, SYSDATETIME() as Today,
+DATEDIFF(Day,'01-10-2005', SYSDATETIME()) as Age
+
+--3. Write a query to display all employees information those who joined 
+--before 5 years in the current month
+select * from employee
+where month(hire_date) = month(SYSDATETIME())
+and hire_date < DATEADD(year, -5, SYSDATETIME())
+
+--4.Create table Employee with empno, ename, sal, doj columns or use your emp table 
+--and perform the following operations in a single transaction
+begin transaction
+
+--a. First insert 3 rows
+insert into Employee(id,name,salary,hire_date)
+values(301,'Raghul',5000,'2024-07-12'),
+(302,'Dhoni', 8500,'2007-07-07'),
+(303,'Stuart', 7000, '2013-06-15')
+
+--b. Update the second row sal with 15% increment 
+update employee
+set salary = salary+((salary/100)*15)
+where id = 302
+
+save transaction before_delete
+
+--c. Delete first row.
+delete from employee
+where id = 303
+
+rollback transaction before_delete
+
+commit
+
+--5. Create a user defined function calculate Bonus for all employees of a
+--given dept using 	following conditions
+create or alter function dbo.calculateBonus (@deptno int, @sal decimal)
+returns decimal
+as 
+  begin
+  declare @bonus decimal
+  --a. For Deptno 10 employees 15% of sal as bonus.
+  if @deptno = 10 
+	set @bonus = @sal + ((@sal/100)*15)
+  --b. For Deptno 20 employees  20% of sal as bonus
+  else if @deptno = 20
+	set @bonus = @sal + ((@sal/100)*20)
+  --c For Others employees 5%of sal as bonus
+  else 
+	set @bonus = @sal + ((@sal/100)*5)
+  return @bonus
+end
+
+select dept_id,ename,salary,dbo.calculateBonus(dept_id,salary) as bonus
+from emp
+where dept_id = 25
+
+--6. Create a procedure to update the salary of employee by 500 whose dept name is Sales 
+--and current salary is below 1500 (use emp table)
+create or alter procedure updatesalary
+as 
+  begin
+  update emp
+  set salary = salary + 500
+  where dname = 'Sales'
+  and salary < 1500
+end
+
+updatesalary
+
+
+
