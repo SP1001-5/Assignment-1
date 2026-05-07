@@ -22,7 +22,7 @@ namespace Assignment_1
         public void DisplayInfo()
         {
             Console.WriteLine($"{EmployeeID} {FirstName} {LastName} Title : {Title}" +
-                $"DOB : {DOB.ToString()} DOJ : {DOJ.ToString()} city : {City}");
+                $" DOB : {DOB.ToString()} DOJ : {DOJ.ToString()} city : {City}");
         }
 
 
@@ -69,19 +69,20 @@ namespace Assignment_1
                 emp.DisplayInfo();
             }
 
-            var dojbefore = empList.Where(e => e.DOJ < new DateTime(2015, 1, 1));
+            var dojbefore = empList.Where(e => e.DOJ < Dateparser("1/1/2015"));
             Console.WriteLine("\n1. Joined before 2015:");
             foreach (var e in dojbefore)
-                Console.WriteLine(e.FirstName);
+                Console.WriteLine(e.FirstName + " " + e.DOJ);
 
-            var dobafter = empList.Where(e => e.DOB > new DateTime(1990, 1, 1));
+            var dobafter = empList.Where(e => e.DOB > Dateparser("1/1/1990"));
             Console.WriteLine("\n2. DOB after 1990:");
-            foreach (var e in dojbefore)
-                Console.WriteLine(e.FirstName);
+            foreach (var e in dobafter)
+                Console.WriteLine(e.FirstName + " " + e.DOB);
 
             var consultantsAndAssociates = empList.Where(e => e.Title == "Consultant" || e.Title == "Associate");
             Console.WriteLine("\n3. Consultants and Associates:");
-            foreach (var emp in consultantsAndAssociates) emp.DisplayInfo();
+            foreach (var emp in consultantsAndAssociates)
+                emp.DisplayInfo();
 
             Console.WriteLine($"\n4. Total employees: {empList.Count}");
 
@@ -89,24 +90,25 @@ namespace Assignment_1
 
             Console.WriteLine($"6. Highest EmployeeID: {empList.Max(e => e.EmployeeID)}");
 
-            Console.WriteLine($"7. Employees joined after 1/1/2015: {empList.Count(e => e.DOJ > new DateTime(2015, 1, 1))}");
+            Console.WriteLine($"7. Employees joined after 1/1/2015: {empList.Count(e => e.DOJ > Dateparser("1/1/2015"))}");
 
             Console.WriteLine($"8. Employees not Associate: {empList.Count(e => e.Title != "Associate")}");
 
             Console.WriteLine("\n9. Employees by City:");
             var byCity = empList.GroupBy(e => e.City)
                                 .Select(g => new { City = g.Key, Count = g.Count() });
-            foreach (var group in byCity) 
+            foreach (var group in byCity)
                 Console.WriteLine($"{group.City}: {group.Count}");
 
             Console.WriteLine("\n10. Employees by City and Title:");
             var byCityTitle = empList.GroupBy(e => new { e.City, e.Title })
                                      .Select(g => new { g.Key.City, g.Key.Title, Count = g.Count() });
-            foreach (var group in byCityTitle) 
+            foreach (var group in byCityTitle)
                 Console.WriteLine($"{group.City} - {group.Title}: {group.Count}");
 
             var youngest = empList.OrderByDescending(e => e.DOB).First();
-            Console.WriteLine($"\n11. Youngest Employee: {youngest.FirstName} {youngest.LastName}, DOB: {youngest.DOB.ToString()}");
+            Console.WriteLine("\n11. Youngest Employee is 1");
+            Console.WriteLine($"\nYoungest Employee: {youngest.FirstName} {youngest.LastName}, DOB: {youngest.DOB.ToString()}");
 
         }
     }
