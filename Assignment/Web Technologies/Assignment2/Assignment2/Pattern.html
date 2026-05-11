@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2>Pattern Formation</h2>
+    <textarea id="format" style="height:100px"></textarea>
+    <script>
+
+        let output = "";
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j <= i; j++) {
+                output += "* ";
+            }
+            output += "\n";
+        }
+        document.getElementById("format").innerHTML = output
+    </script>
+    
+</body>
+</html>

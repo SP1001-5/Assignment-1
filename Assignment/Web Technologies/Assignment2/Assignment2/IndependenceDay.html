@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2>Days for Independence Day </h2>
+    <p  id="Days"></p>
+    <script>
+        function daysforIndependence() {
+            let day = new Date();
+            let year = day.getFullYear();
+            let independenceDay = new Date(year, 7, 15);
+            if (day > independenceDay) {
+                new date(year + 1, 7, 15);
+            }
+            let diff = independenceDay - day;
+            let diffdays = Math.ceil(diff / (1000 * 60 * 60 * 24));
+            return diffdays;
+        }
+        let no_days = daysforIndependence();
+        document.getElementById("Days").innerHTML = "The number of days left are " + no_days + " days";
+    </script>
+</body>
+</html>

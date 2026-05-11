@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Traingle area Calculator</h1>
+    <input type="number" id="val1"  placeholder="Enter value 1"/><br/>
+    <input type="number" id="val2" placeholder="Enter value 2"/><br/>
+    <input type="number" id="val3" placeholder="Enter value 3"/><br/>
+    <button onclick="calculateArea()">Calculate Area</button>
+    <p id="result"></p>
+    <script>
+        function AreaTraingle(a, b, c) {
+            let s = (a + b + c) / 2;
+            let area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+            return area;
+        }
+        function calculateArea() {
+            let a = parseFloat(document.getElementById("val1").value);
+            let b = parseFloat(document.getElementById("val2").value);
+            let c = parseFloat(document.getElementById("val3").value);
+            let area = AreaTraingle(a, b, c)
+            document.getElementById("result").innerHTML = "The area of the triangle is: " + area.toFixed(2);
+        }
+    </script>
+</body>
+</html>
