@@ -1,0 +1,7 @@
+C:\dotnet_training\assessment\ADO\CodeChallenge_7\ADO\ADO\bin\Debug\ADO.exe
+C:\dotnet_training\assessment\ADO\CodeChallenge_7\ADO\ADO\bin\Debug\ADO.exe.config
+C:\dotnet_training\assessment\ADO\CodeChallenge_7\ADO\ADO\obj\Debug\ADO.csproj.AssemblyReference.cache
+C:\dotnet_training\assessment\ADO\CodeChallenge_7\ADO\ADO\obj\Debug\ADO.csproj.CoreCompileInputs.cache
+C:\dotnet_training\assessment\ADO\CodeChallenge_7\ADO\ADO\obj\Debug\ADO.exe
+C:\dotnet_training\assessment\ADO\CodeChallenge_7\ADO\ADO\obj\Debug\ADO.pdb
+C:\dotnet_training\assessment\ADO\CodeChallenge_7\ADO\ADO\bin\Debug\ADO.pdb

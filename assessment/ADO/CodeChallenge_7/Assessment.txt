@@ -1,0 +1,22 @@
+Assessment 
+ 
+--1. Create a stored procedure that adds new rows to the Employee_Details Table. The procedure should accept all the details as input except empno. You need to write the code in the procedure to generate the empno and then insert
+
+create or alter procedure AddEmployee
+@Empname varchar(50),
+@Empsal numeric(10,2),
+@emptype char(1)
+as
+  begin
+  declare @empno int 
+  select @empno = isnull(max(empno),0)+ 1 from Employee_Details
+
+  insert into Employee_Details(Empno,EmpName,Empsal,Emptype)
+  values(@empno,@Empname,@Empsal,@emptype)
+  print 'Employee added'
+end
+
+Exec AddEmployee @Empname = 'John',@Empsal = 28000,@emptype = 'F'
+
+--2. Check the procedure
+select * from Employee_Details
