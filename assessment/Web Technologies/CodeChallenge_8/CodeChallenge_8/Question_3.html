@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+
+        div {
+            font-size: 50px;
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <h2>Button click Event</h2>
+    <div id="result"</div>
+    <button id="btn1">Click Me</button>
+    <script>
+        const button = document.getElementById("btn1");
+        button.addEventListener("click", function () {
+            document.getElementById("result").innerHTML = "The button is clicked";
+        })
+    </script>
+</body>
+</html>

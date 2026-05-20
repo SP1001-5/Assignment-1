@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: cornsilk;
+        }
+
+    </style>
+</head>
+<body>
+        <h2>Input Changed</h2>
+        Enter any input :
+        <input type="text" id="inp1" />
+    <script>
+        $(document).ready(function () {
+            $("#inp1").on("change", function () {
+                $("body").append("<p>The input value is changed</p>");
+            })
+        })
+    </script>
+</body>
+</html>

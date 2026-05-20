@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body{
+            background-color:burlywood;
+        }
+        div{
+            background-color:cornsilk;
+        }
+        ul{
+            width:50%;
+        }
+        li{
+            padding:25px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>CSHARP</li>
+            <li>SQL</li>
+            <li>ADO</li>
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("ul li").each(function (index) {
+                $(this).prepend(index + " ");
+            });
+        });
+    </script>
+</body>
+</html>

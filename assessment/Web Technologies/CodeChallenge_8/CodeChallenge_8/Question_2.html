@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            width: 500px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: burlywood
+        }
+        div{
+            font-size: 20px;
+            padding:20px 10px;
+            background-color:cornsilk;
+        }
+    </style>
+</head>
+<body>
+    
+        <h2>Odd or Even</h2>
+        <div>
+            <div id="result"></div>
+            <script>
+                for (let i = 0; i <= 15; i++) {
+                    if (i % 2 === 0) {
+                        document.getElementById("result").innerHTML += i + " is Even<br/>";
+                    }
+                    else {
+                        document.getElementById("result").innerHTML += i + " is Odd<br/>";
+                    }
+                }
+            </script>
+        </div>
+</body>
+</html>

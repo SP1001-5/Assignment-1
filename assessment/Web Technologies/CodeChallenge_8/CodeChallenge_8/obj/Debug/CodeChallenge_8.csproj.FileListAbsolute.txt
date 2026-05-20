@@ -1,0 +1,7 @@
+C:\dotnet_training notes\ASP.net\CodeChallenge_8\CodeChallenge_8\bin\Debug\CodeChallenge_8.exe.config
+C:\dotnet_training notes\ASP.net\CodeChallenge_8\CodeChallenge_8\bin\Debug\CodeChallenge_8.exe
+C:\dotnet_training notes\ASP.net\CodeChallenge_8\CodeChallenge_8\bin\Debug\CodeChallenge_8.pdb
+C:\dotnet_training notes\ASP.net\CodeChallenge_8\CodeChallenge_8\obj\Debug\CodeChallenge_8.csproj.AssemblyReference.cache
+C:\dotnet_training notes\ASP.net\CodeChallenge_8\CodeChallenge_8\obj\Debug\CodeChallenge_8.csproj.CoreCompileInputs.cache
+C:\dotnet_training notes\ASP.net\CodeChallenge_8\CodeChallenge_8\obj\Debug\CodeChallenge_8.exe
+C:\dotnet_training notes\ASP.net\CodeChallenge_8\CodeChallenge_8\obj\Debug\CodeChallenge_8.pdb
